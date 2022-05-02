@@ -2,6 +2,18 @@ const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#navbar__logo');
 
+// const zoomElement = document.querySelector(".services-h2");
+// let zoom = 1;
+// const ZOOM_SPEED=0.1;
+// document.addEventListener("wheel", function (e) {
+//   if (e.deltaY > 0) {
+//     zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`;
+//   } else {
+//     zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
+//   }
+// });
+
+
 // Display Mobile Menu
 const mobileMenu = () => {
   menu.classList.toggle('is-active');
@@ -16,6 +28,7 @@ const highlightMenu = () => {
   const homeMenu = document.querySelector('#home-page');
   const aboutMenu = document.querySelector('#about-page');
   const servicesMenu = document.querySelector('#services-page');
+  const contactsMenu = document.querySelector('#contacts-page');
   let scrollPos = window.scrollY;
   // console.log(scrollPos);
 
@@ -24,12 +37,14 @@ const highlightMenu = () => {
     homeMenu.classList.add('highlight');
     aboutMenu.classList.remove('highlight');
     return;
-  } else if (window.innerWidth > 960 && scrollPos < 1400) {
+  } 
+  else if (window.innerWidth > 960 && scrollPos < 1400) {
     aboutMenu.classList.add('highlight');
     homeMenu.classList.remove('highlight');
     servicesMenu.classList.remove('highlight');
     return;
-  } else if (window.innerWidth > 960 && scrollPos < 2345) {
+  } 
+  else if (window.innerWidth > 960 && scrollPos < 2345) {
     servicesMenu.classList.add('highlight');
     aboutMenu.classList.remove('highlight');
     return;
@@ -54,3 +69,6 @@ const hideMobileMenu = () => {
 
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
+
+
+
